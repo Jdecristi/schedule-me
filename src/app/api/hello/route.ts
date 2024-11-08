@@ -1,10 +1,13 @@
-import type { NextRequest } from 'next/server'
-import { getRequestContext } from '@cloudflare/next-on-pages'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { getRequestContext } from "@cloudflare/next-on-pages";
 
-export const runtime = 'edge'
+import type { NextRequest } from "next/server";
 
+export const runtime = "edge";
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function GET(request: NextRequest) {
-  let responseText = 'Hello World'
+  const responseText = "Hello World";
 
   // In the edge runtime you can use Bindings that are available in your application
   // (for more details see:
@@ -18,5 +21,5 @@ export async function GET(request: NextRequest) {
   // const suffix = await myKv.get('suffix')
   // responseText += suffix
 
-  return new Response(responseText)
+  return new Response(responseText);
 }
